@@ -8,8 +8,9 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JTabbedPane;
 
-public interface Ui {
-	public static void startGUI() {
+public class GUI {
+
+	public static void main(String[] args) {
 		JFrame frame = new JFrame("Test");
 		frame.setSize(500, 300);
 		frame.setVisible(true);
@@ -30,8 +31,5 @@ public interface Ui {
 		panel.setLayout(new GridLayout(1,1));
 		return panel;
 	}
-	
-	public static void run() {
-		startGUI();
-	}
+
 }
