@@ -36,13 +36,13 @@ public interface UI {
 		return panel;
 	}
 	
-	private static Component makePanel(String buttonText, String textfieldName, String textfieldNumber, String textfieldMail) {
+	private static Component makePanel(String buttonText, String labelName, String labelNumber, String labelMail) {
 		JPanel panel = new JPanel();
-		panel.add(new Label(textfieldName));
+		panel.add(new Label(labelName));
 //		panel.add(new JTextField("", 1));
-		panel.add(new Label(textfieldNumber));
+		panel.add(new Label(labelNumber));
 //		panel.add(new JTextField());
-		panel.add(new Label(textfieldMail));
+		panel.add(new Label(labelMail));
 //		panel.add(new JTextField());
 		panel.add(new JButton(buttonText));
 		panel.setLayout(new GridLayout(4,4));
