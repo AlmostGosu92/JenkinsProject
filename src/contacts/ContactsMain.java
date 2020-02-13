@@ -1,9 +1,9 @@
 package contacts;
 
-public class ContactsMain implements ui.Ui {
+public class ContactsMain implements ui.UI {
 
 	public static void main(String[] args) {
-		ui.Ui.run();
+		ui.UI.run();
 		
 
 	}

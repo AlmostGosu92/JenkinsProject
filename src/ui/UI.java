@@ -8,7 +8,7 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JTabbedPane;
 
-public interface Ui {
+public interface UI {
 	public static void startGUI() {
 		JFrame frame = new JFrame("Test");
 		frame.setSize(500, 300);
