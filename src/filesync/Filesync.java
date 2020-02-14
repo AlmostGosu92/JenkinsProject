@@ -27,7 +27,7 @@ public class Filesync {
 		}
 //		läser av alla parametrar i constructorn per rad
 		for (int i = 0; i < antalRader; i++) {
-			b.contacts.add(new Contact(sc.next(), sc.next(), sc.next()));
+			b.contacts.add(new Contact(sc.next(), sc.next(), sc.next(), sc.next()));
 			sc.hasNextLine();
 
 		}
@@ -37,6 +37,7 @@ public class Filesync {
 		BufferedWriter out = new BufferedWriter(new FileWriter("kontaktlista.txt"));
 		for (int i = 0; i < b.contacts.size(); i++) {
 			out.write(b.contacts.get(i).getName() + " ");
+			out.write(b.contacts.get(i).getLastName());
 			out.write(b.contacts.get(i).getMail() + " ");
 			out.write(b.contacts.get(i).getNumber() + " ");
 			out.newLine();
