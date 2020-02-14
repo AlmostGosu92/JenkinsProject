@@ -16,7 +16,7 @@ import javax.swing.JTextField;
 public interface UI {
 	private static void startGUI() {
 		JFrame frame = new JFrame("Contactbook");
-		frame.setSize(500, 500);
+		frame.setSize(400, 400);
 		frame.setVisible(true);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
@@ -26,6 +26,7 @@ public interface UI {
 		
 		tabbedPane.addTab("Contactbook", makePanel("Contacts will go here"));
 		tabbedPane.addTab("Add Contact", makePanel("Add Contact", " First Name: ", "Last name: ", "Number: ", "E-Mail: "));
+		tabbedPane.addTab("Search", makePanel("this is where we search"));
 		
 		frame.getContentPane().add(tabbedPane);
 		
