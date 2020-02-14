@@ -3,9 +3,6 @@ package ui;
 import java.awt.Component;
 import java.awt.FlowLayout;
 import java.awt.GridLayout;
-import java.awt.LayoutManager;
-
-import javax.swing.BoxLayout;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -16,6 +13,9 @@ import javax.swing.JTextField;
 import contacts.ContactBook;
 
 public interface UI {
+	
+	ContactBook cb = new ContactBook();
+	
 	private void startGUI() {
 		JFrame frame = new JFrame("Contactbook");
 		frame.setSize(400, 400);
@@ -45,7 +45,6 @@ public interface UI {
 	
 	private Component makePanel(String buttonText, String labelFName, String labelLName, String labelNumber, String labelMail) {
 		JPanel panel = new JPanel();
-		String fName, lName, mail, number;
 		panel.add(new JLabel(labelFName));
 		JTextField jtfFname = new JTextField(null, 5);
 		JTextField jtfLname = new JTextField(null, 5);
@@ -53,7 +52,7 @@ public interface UI {
 		JTextField jtfNumber = new JTextField(null, 5);
 		
 		JButton addButton = new JButton(buttonText);
-		addButton.addActionListener(l ->  ContactBook.addContact(jtfFname.getText(), jtfLname.getText(), jtfMail.getText(), jtfNumber.getText()));
+		addButton.addActionListener(l ->  cb.addContact(jtfFname.getText(), jtfLname.getText(), jtfMail.getText(), jtfNumber.getText()));
 
 		panel.add(jtfFname);
 		panel.add(new JLabel(labelLName));
