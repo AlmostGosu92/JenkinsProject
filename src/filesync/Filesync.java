@@ -15,6 +15,7 @@ import contacts.ContactBook;
 public class Filesync {
 
 	ContactBook b = new ContactBook();
+	
 	public void Load() throws FileNotFoundException {
 		File file = new File("kontaktlista.txt");
 		Scanner radraknare = new Scanner(file);
@@ -33,11 +34,11 @@ public class Filesync {
 		}
 
 	}
-	public void Save() throws IOException {
+	public void save() throws IOException {
 		BufferedWriter out = new BufferedWriter(new FileWriter("kontaktlista.txt"));
 		for (int i = 0; i < b.contacts.size(); i++) {
 			out.write(b.contacts.get(i).getName() + " ");
-			out.write(b.contacts.get(i).getLastName());
+			out.write(b.contacts.get(i).getLastName() + " ");
 			out.write(b.contacts.get(i).getMail() + " ");
 			out.write(b.contacts.get(i).getNumber() + " ");
 			out.newLine();

@@ -20,10 +20,10 @@ class ContactBookTest {
 	}
 	
 	
-	@Test
-	public void TestContactIsRemoved() {
-		cb.removeContact("Lars", "Roflsson", "hej@gmeul.com", "73827318");
-		assertEquals(cb.contacts.get(1), kontakt1);
-	}	
+//	@Test
+//	public void TestContactIsRemoved() {
+//		cb.removeContact("Lars", "Roflsson", "hej@gmeul.com", "73827318");
+//		assertEquals(cb.contacts.get(1), kontakt1);
+//	}	
 
 }

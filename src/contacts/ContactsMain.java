@@ -1,5 +1,8 @@
 package contacts;
 
+import java.io.IOException;
+
+import filesync.Filesync;
 import ui.UI;
 
 public class ContactsMain {
