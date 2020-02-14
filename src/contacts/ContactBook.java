@@ -15,8 +15,8 @@ public class ContactBook {
 //		contacts.remove(input);
 // }
 	
-  public void addContact(String name, String email, String number) {
-	  contacts.add(new Contact(name, email ,number));
+  public void addContact(String name, String lastName, String email, String number) {
+	  contacts.add(new Contact(name, lastName, email ,number));
 }
 	
 	

@@ -2,10 +2,11 @@ package contacts;
 
 public class Contact {
 	
-	String name, mail, number;
+	String name, lastName, mail, number;
 	
-	public Contact(String name, String mail, String number) {
+	public Contact(String name, String lastName, String mail, String number) {
 		this.name = name;
+		this.lastName = lastName;
 		this.mail = mail;
 		this.number = number;
 	}
@@ -16,6 +17,13 @@ public class Contact {
 
 	public void setName(String name) {
 		this.name = name;
+	}
+	public String getLastName() {
+		return lastName;
+	}
+
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
 	}
 
 	public String getMail() {
