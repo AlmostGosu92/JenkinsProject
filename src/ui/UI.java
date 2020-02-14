@@ -1,11 +1,14 @@
 package ui;
 
 import java.awt.Component;
+import java.awt.FlowLayout;
 import java.awt.GridLayout;
-import java.awt.Label;
+import java.awt.LayoutManager;
 
+import javax.swing.BoxLayout;
 import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTabbedPane;
 import javax.swing.JTextField;
@@ -22,7 +25,7 @@ public interface UI {
 		JTabbedPane tabbedPane = new JTabbedPane(JTabbedPane.TOP);
 		
 		tabbedPane.addTab("Contactbook", makePanel("Contacts will go here"));
-		tabbedPane.addTab("Add Contact", makePanel("Add Contact", "Name: ", "Number: ", "E-Mail: "));
+		tabbedPane.addTab("Add Contact", makePanel("Add Contact", " First Name: ", "Last name: ", "Number: ", "E-Mail: "));
 		
 		frame.getContentPane().add(tabbedPane);
 		
@@ -31,21 +34,26 @@ public interface UI {
 
 	private static Component makePanel(String string) {
 		JPanel panel = new JPanel();
-		panel.add(new Label(string));
-		panel.setLayout(new GridLayout(1,1));
+		panel.add(new JLabel(string));
+		panel.setLayout(new FlowLayout());
+		panel.setAlignmentX(0);
 		return panel;
 	}
 	
-	private static Component makePanel(String buttonText, String labelName, String labelNumber, String labelMail) {
+	private static Component makePanel(String buttonText, String labelFName, String labelLName, String labelNumber, String labelMail) {
 		JPanel panel = new JPanel();
-		panel.add(new Label(labelName));
-//		panel.add(new JTextField("", 1));
-		panel.add(new Label(labelNumber));
-//		panel.add(new JTextField());
-		panel.add(new Label(labelMail));
-//		panel.add(new JTextField());
-		panel.add(new JButton(buttonText));
-		panel.setLayout(new GridLayout(4,4));
+		panel.add(new JLabel(labelFName));
+		panel.add(new JTextField(null, 5));
+		panel.add(new JLabel(labelLName));
+		panel.add(new JTextField(null, 5));
+		panel.add(new JLabel(labelNumber));
+		panel.add(new JTextField(null, 5));
+		panel.add(new JLabel(labelMail));
+		panel.add(new JTextField(null, 5));
+		JButton addButton = new JButton(buttonText);
+		addButton.setAlignmentX(Component.CENTER_ALIGNMENT);
+		panel.add(addButton);
+		panel.setLayout(new GridLayout(5,2));
 		return panel;
 		
 	}
