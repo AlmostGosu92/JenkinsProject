@@ -2,8 +2,7 @@ package contacts;
 
 import java.util.ArrayList;
 
-public class ContactBook {
-	
+public class ContactBook implements ui.UI {
 	public ArrayList<Contact> contacts = new ArrayList<>();
 	
 	

@@ -13,8 +13,10 @@ import javax.swing.JPanel;
 import javax.swing.JTabbedPane;
 import javax.swing.JTextField;
 
+import contacts.ContactBook;
+
 public interface UI {
-	private static void startGUI() {
+	private void startGUI() {
 		JFrame frame = new JFrame("Contactbook");
 		frame.setSize(400, 400);
 		frame.setVisible(true);
@@ -33,7 +35,7 @@ public interface UI {
 		
 	}
 
-	private static Component makePanel(String string) {
+	private Component makePanel(String string) {
 		JPanel panel = new JPanel();
 		panel.add(new JLabel(string));
 		panel.setLayout(new FlowLayout());
@@ -41,25 +43,33 @@ public interface UI {
 		return panel;
 	}
 	
-	private static Component makePanel(String buttonText, String labelFName, String labelLName, String labelNumber, String labelMail) {
+	private Component makePanel(String buttonText, String labelFName, String labelLName, String labelNumber, String labelMail) {
 		JPanel panel = new JPanel();
+		String fName, lName, mail, number;
 		panel.add(new JLabel(labelFName));
-		panel.add(new JTextField(null, 5));
-		panel.add(new JLabel(labelLName));
-		panel.add(new JTextField(null, 5));
-		panel.add(new JLabel(labelNumber));
-		panel.add(new JTextField(null, 5));
-		panel.add(new JLabel(labelMail));
-		panel.add(new JTextField(null, 5));
+		JTextField jtfFname = new JTextField(null, 5);
+		JTextField jtfLname = new JTextField(null, 5);
+		JTextField jtfMail = new JTextField(null, 5);
+		JTextField jtfNumber = new JTextField(null, 5);
+		
 		JButton addButton = new JButton(buttonText);
-		addButton.setAlignmentX(Component.CENTER_ALIGNMENT);
+		addButton.addActionListener(l ->  ContactBook.addContact(jtfFname.getText(), jtfLname.getText(), jtfMail.getText(), jtfNumber.getText()));
+
+		panel.add(jtfFname);
+		panel.add(new JLabel(labelLName));
+		panel.add(jtfLname);
+		panel.add(new JLabel(labelNumber));
+		panel.add(jtfMail);
+		panel.add(new JLabel(labelMail));
+		panel.add(jtfNumber);
 		panel.add(addButton);
 		panel.setLayout(new GridLayout(5,2));
+		
 		return panel;
 		
 	}
 	
-	public static void run() {
+	public default void run() {
 		startGUI();
 	}
 }
