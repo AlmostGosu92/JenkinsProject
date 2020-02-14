@@ -4,6 +4,6 @@ import java.util.ArrayList;
 
 public class ContactBook {
 	
-	ArrayList<Contact> contacts = new ArrayList<>();
+	public ArrayList<Contact> contacts = new ArrayList<>();
 
 }

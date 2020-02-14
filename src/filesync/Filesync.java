@@ -1,13 +1,20 @@
 package filesync;
 
+import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.Scanner;
+
+import contacts.Contact;
+import contacts.ContactBook;
 
 
 
 public class Filesync {
 
+	ContactBook b = new ContactBook();
 	public void Load() throws FileNotFoundException {
 		File file = new File("kontaktlista.txt");
 		Scanner radraknare = new Scanner(file);
@@ -20,10 +27,20 @@ public class Filesync {
 		}
 //		läser av alla parametrar i constructorn per rad
 		for (int i = 0; i < antalRader; i++) {
-			namn.add(new Contacts(sc.next(), sc.next(), sc.next()));
+			b.contacts.add(new Contact(sc.next(), sc.next(), sc.next()));
 			sc.hasNextLine();
 
 		}
 
+	}
+	public void Save() throws IOException {
+		BufferedWriter out = new BufferedWriter(new FileWriter("kontaktlista.txt"));
+		for (int i = 0; i < b.contacts.size(); i++) {
+			out.write(b.contacts.get(i).getName() + " ");
+			out.write(b.contacts.get(i).getMail() + " ");
+			out.write(b.contacts.get(i).getNumber() + " ");
+			out.newLine();
+	}
+		out.close();
 	}
 }
