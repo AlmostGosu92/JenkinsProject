@@ -14,10 +14,10 @@ public class ContactBook implements ui.UI {
 	  contacts.add(new Contact(name, lastName, email ,number));
 	}
 
-	@Override
-	public void run() {
-		
-	}
+//	@Override
+//	public void run() {
+//		
+//	}
 	
 	
 }
