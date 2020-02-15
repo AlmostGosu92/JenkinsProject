@@ -1,29 +1,47 @@
 package testfiles;
 
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotEquals;
 
 import org.junit.jupiter.api.Test;
 
-import contacts.Contact;
 import contacts.ContactBook;
 
 class ContactBookTest {
 	
-	ContactBook cb = new ContactBook();
-	Contact kontakt1 = new Contact("Lars", "Roflsson", "hej@gmeul.com", "73827318");
 
 	@Test
 	public void TestContactIsAdded() {
-		cb.addContact("Lars", "Roflsson", "hej@gmeul.com", "73827318");
-		assertNotEquals(cb.contacts.get(0), kontakt1);
+		ContactBook cb = new ContactBook();
+		cb.addContact("Lars", "roFFel", "hej@gmail.com", "2123123");
+		assertEquals(cb.contacts.size(), 1);
 	}
 	
 	
-//	@Test
-//	public void TestContactIsRemoved() {
-//		cb.removeContact("Lars", "Roflsson", "hej@gmeul.com", "73827318");
-//		assertEquals(cb.contacts.get(1), kontakt1);
-//	}	
+	@Test
+	public void TestTwoContactsAreAdded() {
+		ContactBook cb = new ContactBook();
+		cb.addContact("Lars", "roFFel", "hej@gmail.com", "2123123");
+		cb.addContact("Lars", "ruFFel", "haj@gmail.com", "23213123");
+		assertEquals(cb.contacts.size(), 2);
+	}
+	
+	@Test
+	public void TestRemove1Contact() {
+		ContactBook cb = new ContactBook();
+		cb.addContact("Lars", "roFFel", "hej@gmail.com", "2123123");
+		cb.addContact("Lars", "ruFFel", "haj@gmail.com", "23213123");
+		cb.removeContact(1);
+		assertEquals(cb.contacts.size(), 1);
+	}
+	
+	@Test
+	public void TestRemove2Contact() {
+		ContactBook cb = new ContactBook();
+		cb.addContact("Lars", "roFFel", "hej@gmail.com", "2123123");
+		cb.addContact("Lars", "ruFFel", "haj@gmail.com", "23213123");
+		cb.removeContact(1);
+		cb.removeContact(0);
+		assertEquals(cb.contacts.size(), 0);
+	}
 
 }
