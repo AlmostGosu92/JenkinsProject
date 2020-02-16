@@ -3,7 +3,7 @@ package contacts;
 import java.util.ArrayList;
 
 public class ContactBook implements ui.UI {
-	public ArrayList<Contact> contacts = new ArrayList<>();
+	public static ArrayList<Contact> contacts = new ArrayList<>();
 	
 	
 	public void removeContact(int i) {
