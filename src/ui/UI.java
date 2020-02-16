@@ -87,33 +87,27 @@ public interface UI {
 		
 		JButton saveButton = new JButton("Save contacts");
 		JButton addButton = new JButton(buttonText);
-		addButton.addActionListener(l ->  cb.addContact(jtfFname.getText(), jtfLname.getText(), jtfMail.getText(), jtfNumber.getText()));
-		saveButton.addActionListener(l -> {
-			try {
-				f.save();
-			} catch (IOException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-		});
-//		addButton.addActionListener(new ActionListener() {
-//			public void actionPerformed(ActionEvent evt) {
-//				cb.addContact(jtfFname.getText(), jtfLname.getText(), jtfMail.getText(), jtfNumber.getText());
-//				new ActionListener() {
-//
-//					@Override
-//					public void actionPerformed(ActionEvent e) {
-//						try {
-//							f.save();
-//						} catch (IOException e1) {
-//							e1.printStackTrace();
-//						}
-//						
-//					}
-//					
-//				};
+//		addButton.addActionListener(l ->  cb.addContact(jtfFname.getText(), jtfLname.getText(), jtfMail.getText(), jtfNumber.getText()));
+//		saveButton.addActionListener(l -> {
+//			try {
+//				f.save();
+//			} catch (IOException e) {
+//				// TODO Auto-generated catch block
+//				e.printStackTrace();
 //			}
 //		});
+		addButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent evt) {
+				cb.addContact(jtfFname.getText(), jtfLname.getText(), jtfMail.getText(), jtfNumber.getText());
+						try {
+							f.save();
+						} catch (IOException e1) {
+							e1.printStackTrace();
+						}
+						
+					
+				};
+			});
 //		addButton.addActionListener(l -> ); //Behöver implementera kod för att updatera JScrollPane i Contactbook tabben
 
 		panel.add(new JLabel(labelFName));
