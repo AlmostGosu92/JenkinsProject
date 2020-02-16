@@ -40,14 +40,13 @@ public class FileSyncTest {
 		int tokens = 0;
 		File file = new File("kontaktlista.txt");
 		Scanner scan = new Scanner(file);
-		while(scan.hasNextLine() == true) {
+		while(scan.hasNext() == true) {
 			
 			tokens++;
-			scan.nextLine();
+			scan.next();
 		
 		}
-		System.out.println(c.contacts.get(0).getName());
-		assertEquals(2, tokens);
+		assertEquals(8, tokens);
 		
 		
 		
