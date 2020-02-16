@@ -35,7 +35,6 @@ public class FileSyncTest {
 		ContactBook c = new ContactBook();
 		c.addContact("Peter", "Petersson", "peter@hotmail.com", "070-9367431");
 		c.addContact("Eric", "Ericsson", "eric@hotmail.com", "08-4343435");
-		System.out.println(c.contacts.size());
 		f.save();
 		int tokens = 0;
 		File file = new File("kontaktlista.txt");
