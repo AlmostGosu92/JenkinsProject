@@ -7,6 +7,7 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JScrollPane;
 import javax.swing.JTabbedPane;
 import javax.swing.JTextField;
 
@@ -28,7 +29,7 @@ public interface UI {
 		
 		JTabbedPane tabbedPane = new JTabbedPane(JTabbedPane.TOP);
 		
-		tabbedPane.addTab("Contactbook", makePanelContactList("Contacts will go here"));
+		tabbedPane.addTab("Contactbook", makePanelContactList());
 		tabbedPane.addTab("Add Contact", makePanelAddContact("Add Contact", " First Name: ", "Last name: ", "Number: ", "E-Mail: "));
 		tabbedPane.addTab("Search", makePanelSearch("Search Contact"));
 		
@@ -45,15 +46,16 @@ public interface UI {
 		panel.setLayout(new GridLayout(2,1));
 		panel.add(jtfSearch);
 		panel.add(searchButton);
-		searchButton.addActionListener(l -> jtfSearch.setText(cbs.searchContact(jtfSearch.getText())));
+//		searchButton.addActionListener(l -> jtfSearch.setText(cbs.searchContact(jtfSearch.getText())));
 		return panel;
 	}
 
-	private Component makePanelContactList(String string) {
+	private Component makePanelContactList() {
 		JPanel panel = new JPanel();
-		panel.add(new JLabel(string));
-		panel.setLayout(new FlowLayout());
-		panel.setAlignmentX(0);
+		JScrollPane scroll = new JScrollPane();
+		
+		panel.add(scroll);
+		panel.setLayout(new GridLayout(1,1));
 		return panel;
 	}
 	

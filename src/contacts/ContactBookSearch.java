@@ -3,16 +3,16 @@ package contacts;
 public class ContactBookSearch  {
 	
 
-//	public void Search() {
+//	public Search(String string) {
 //		
 //		for (Contact contact : ConList) {
-//		if (in.equals(contact.getName()){
+//		if (string.equals(contact.getName()){
 //			return contact;
 //		}
-//		else if (in.equals(contact.getMail)) {
+//		else if (string.equals(contact.getMail)) {
 //			return contact;
 //		}
-//		else if (in.equals(contact.getNumber)) {
+//		else if (string.equals(contact.getNumber)) {
 //			return contact;
 //		}
 //	}
