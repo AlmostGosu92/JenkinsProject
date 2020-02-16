@@ -16,7 +16,7 @@ public class Filesync {
 
 	ContactBook b = new ContactBook();
 	
-	public void Load() throws FileNotFoundException {
+	public void load() throws FileNotFoundException {
 		File file = new File("kontaktlista.txt");
 		Scanner radraknare = new Scanner(file);
 		Scanner sc = new Scanner(file);

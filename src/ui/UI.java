@@ -6,11 +6,13 @@ import java.awt.GridLayout;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JList;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTabbedPane;
 import javax.swing.JTextField;
 
+import contacts.Contact;
 import contacts.ContactBook;
 import contacts.ContactBookSearch;
 
@@ -29,7 +31,7 @@ public interface UI {
 		
 		JTabbedPane tabbedPane = new JTabbedPane(JTabbedPane.TOP);
 		
-		tabbedPane.addTab("Contactbook", makePanelContactList());
+		tabbedPane.addTab("Contactbook", makePanelContactList("Remove Contact"));
 		tabbedPane.addTab("Add Contact", makePanelAddContact("Add Contact", " First Name: ", "Last name: ", "Number: ", "E-Mail: "));
 		tabbedPane.addTab("Search", makePanelSearch("Search Contact"));
 		
@@ -50,12 +52,22 @@ public interface UI {
 		return panel;
 	}
 
-	private Component makePanelContactList() {
+	private Component makePanelContactList(String string) {
 		JPanel panel = new JPanel();
+		JList <Contact> list = new JList<>();
 		JScrollPane scroll = new JScrollPane();
+		JButton removeButton = new JButton(string);
+		
+		list.setVisible(true);
+		
+//		removeButton.addActionListener(l -> cb.removeContact(scroll.));
+		
+		scroll.createVerticalScrollBar();
+		scroll.add(list);
 		
 		panel.add(scroll);
-		panel.setLayout(new GridLayout(1,1));
+		panel.add(removeButton);
+		panel.setLayout(new GridLayout(2,1));
 		return panel;
 	}
 	
