@@ -15,9 +15,11 @@ import javax.swing.JTextField;
 import contacts.Contact;
 import contacts.ContactBook;
 import contacts.ContactBookSearch;
+import filesync.Filesync;
 
 public interface UI {
 	
+	Filesync f = new Filesync();
 	ContactBook cb = new ContactBook();
 	ContactBookSearch cbs = new ContactBookSearch();
 	
@@ -54,7 +56,7 @@ public interface UI {
 
 	private Component makePanelContactList(String string) {
 		JPanel panel = new JPanel();
-		JList <Contact> list = new JList<>();
+		JList list = new JList(cb.contacts.toArray());
 		JScrollPane scroll = new JScrollPane();
 		JButton removeButton = new JButton(string);
 		

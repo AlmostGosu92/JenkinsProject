@@ -8,16 +8,16 @@ public class ContactBookSearch  {
 	public String searchContact(String string) {
 		
 		for (Contact contact : UI.cb.contacts) {
-		if (string.equalsIgnoreCase(contact.getName())){
+		if (contact.getName().toLowerCase().contains(string)){
 			return contact.getName() + " " + contact.getLastName() + ", " + contact.getMail() + ", " + contact.getNumber();
 		}
-		else if (string.equalsIgnoreCase(contact.getLastName())) {
+		else if (contact.getLastName().toLowerCase().contains(string)) {
 			return contact.getName() + " " + contact.getLastName() + ", " + contact.getMail() + ", " + contact.getNumber();
 		}
-		else if (string.equalsIgnoreCase(contact.getMail())) {
+		else if (contact.getMail().toLowerCase().contains(string)) {
 			return contact.getName() + " " + contact.getLastName() + ", " + contact.getMail() + ", " + contact.getNumber();
 		}
-		else if (string.equalsIgnoreCase(contact.getNumber())) {
+		else if (contact.getNumber().toLowerCase().contains(string)) {
 			return contact.getName() + " " + contact.getLastName() + ", " + contact.getMail() + ", " + contact.getNumber();
 		}
 	}
