@@ -18,13 +18,24 @@ public class Filesync {
 
 	ContactBook b = ui.UI.cb;
 	
-	public void load() throws FileNotFoundException {
-		File file = new File("kontaktlista.txt");
+	private String filnamn = "kontaktlista.txt";
+
+	public String getFilnamn() {
+		return filnamn;
+	}
+
+	public void setFilnamn(String filnamn) {
+		this.filnamn = filnamn;
+	}
+	
+	public void Load() throws FileNotFoundException {
+		
+		File file = new File(filnamn);
 		Scanner radraknare = new Scanner(file);
 		Scanner sc = new Scanner(file);
 		int antalRader = 0;
 //		räknar antalet rader i filen
-		while(radraknare.hasNextLine()) {
+		while (radraknare.hasNextLine()) {
 			antalRader++;
 			radraknare.nextLine();
 		}
@@ -34,17 +45,23 @@ public class Filesync {
 			sc.hasNextLine();
 
 		}
+		
 
 	}
 	public void save() throws IOException {
-		BufferedWriter out = new BufferedWriter(new FileWriter("kontaktlista.txt"));
+		
+		BufferedWriter out = new BufferedWriter(new FileWriter(filnamn));
 		for (int i = 0; i < b.contacts.size(); i++) {
 			out.write(b.contacts.get(i).getName() + " ");
 			out.write(b.contacts.get(i).getLastName() + " ");
 			out.write(b.contacts.get(i).getMail() + " ");
 			out.write(b.contacts.get(i).getNumber() + " ");
 			out.newLine();
-	}
+
+		}
+
 		out.close();
+
+
 	}
 }
