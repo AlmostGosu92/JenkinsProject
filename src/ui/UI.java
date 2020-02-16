@@ -46,7 +46,7 @@ public interface UI {
 		panel.setLayout(new GridLayout(2,1));
 		panel.add(jtfSearch);
 		panel.add(searchButton);
-//		searchButton.addActionListener(l -> jtfSearch.setText(cbs.searchContact(jtfSearch.getText())));
+		searchButton.addActionListener(l -> jtfSearch.setText(cbs.searchContact(jtfSearch.getText())));
 		return panel;
 	}
 
