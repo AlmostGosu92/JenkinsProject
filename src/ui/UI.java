@@ -1,7 +1,6 @@
 package ui;
 
 import java.awt.Component;
-import java.awt.FlowLayout;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -16,7 +15,6 @@ import javax.swing.JScrollPane;
 import javax.swing.JTabbedPane;
 import javax.swing.JTextField;
 
-import contacts.Contact;
 import contacts.ContactBook;
 import contacts.ContactBookSearch;
 import filesync.Filesync;
@@ -64,8 +62,18 @@ public interface UI {
 		JScrollPane scroll = new JScrollPane(list);
 		JButton removeButton = new JButton(string);
 		
-		//kod ska implementeras för removeContact metod
-//		removeButton.addActionListener(l -> cb.removeContact(scroll)));
+//		kod ska implementeras för removeContact metod
+//		removeButton.addActionListener(l -> cb.removeContact(list.getSelectedIndex()));
+		removeButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent evt) {
+				cb.removeContact(list.getSelectedIndex());
+						try {
+							f.save();
+						} catch (IOException e1) {
+							e1.printStackTrace();
+						}
+				};
+			});
 		
 		list.setVisible(true);		
 		
@@ -85,17 +93,7 @@ public interface UI {
 		JTextField jtfMail = new JTextField(null, 5);
 		JTextField jtfNumber = new JTextField(null, 5);
 		
-		JButton saveButton = new JButton("Save contacts");
 		JButton addButton = new JButton(buttonText);
-//		addButton.addActionListener(l ->  cb.addContact(jtfFname.getText(), jtfLname.getText(), jtfMail.getText(), jtfNumber.getText()));
-//		saveButton.addActionListener(l -> {
-//			try {
-//				f.save();
-//			} catch (IOException e) {
-//				// TODO Auto-generated catch block
-//				e.printStackTrace();
-//			}
-//		});
 		addButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent evt) {
 				cb.addContact(jtfFname.getText(), jtfLname.getText(), jtfMail.getText(), jtfNumber.getText());
@@ -104,8 +102,6 @@ public interface UI {
 						} catch (IOException e1) {
 							e1.printStackTrace();
 						}
-						
-					
 				};
 			});
 //		addButton.addActionListener(l -> ); //Behöver implementera kod för att updatera JScrollPane i Contactbook tabben
@@ -118,7 +114,6 @@ public interface UI {
 		panel.add(jtfMail);
 		panel.add(new JLabel(labelMail));
 		panel.add(jtfNumber);
-		panel.add(saveButton);
 		panel.add(addButton);
 		panel.setLayout(new GridLayout(5,2));
 		
