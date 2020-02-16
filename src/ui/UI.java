@@ -11,10 +11,12 @@ import javax.swing.JTabbedPane;
 import javax.swing.JTextField;
 
 import contacts.ContactBook;
+import contacts.ContactBookSearch;
 
 public interface UI {
 	
 	ContactBook cb = new ContactBook();
+	ContactBookSearch cbs = new ContactBookSearch();
 	
 	private void startGUI() {
 		JFrame frame = new JFrame("Contactbook");
@@ -26,16 +28,28 @@ public interface UI {
 		
 		JTabbedPane tabbedPane = new JTabbedPane(JTabbedPane.TOP);
 		
-		tabbedPane.addTab("Contactbook", makePanel("Contacts will go here"));
-		tabbedPane.addTab("Add Contact", makePanel("Add Contact", " First Name: ", "Last name: ", "Number: ", "E-Mail: "));
-		tabbedPane.addTab("Search", makePanel("this is where we search"));
+		tabbedPane.addTab("Contactbook", makePanelContactList("Contacts will go here"));
+		tabbedPane.addTab("Add Contact", makePanelAddContact("Add Contact", " First Name: ", "Last name: ", "Number: ", "E-Mail: "));
+		tabbedPane.addTab("Search", makePanelSearch("Search Contact"));
 		
 		frame.getContentPane().add(tabbedPane);
 		
 		
 	}
 
-	private Component makePanel(String string) {
+	private Component makePanelSearch(String string) {
+		JPanel panel = new JPanel();
+		JTextField jtfSearch = new JTextField();
+		JButton searchButton = new JButton(string);
+		
+		panel.setLayout(new GridLayout(2,1));
+		panel.add(jtfSearch);
+		panel.add(searchButton);
+		searchButton.addActionListener(l -> jtfSearch.setText(cbs.searchContact(jtfSearch.getText())));
+		return panel;
+	}
+
+	private Component makePanelContactList(String string) {
 		JPanel panel = new JPanel();
 		panel.add(new JLabel(string));
 		panel.setLayout(new FlowLayout());
@@ -43,7 +57,7 @@ public interface UI {
 		return panel;
 	}
 	
-	private Component makePanel(String buttonText, String labelFName, String labelLName, String labelNumber, String labelMail) {
+	private Component makePanelAddContact(String buttonText, String labelFName, String labelLName, String labelNumber, String labelMail) {
 		JPanel panel = new JPanel();
 		panel.add(new JLabel(labelFName));
 		JTextField jtfFname = new JTextField(null, 5);
