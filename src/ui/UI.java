@@ -57,15 +57,16 @@ public interface UI {
 	private Component makePanelContactList(String string) {
 		JPanel panel = new JPanel();
 		JList list = new JList(cb.contacts.toArray());
-		JScrollPane scroll = new JScrollPane();
+		JScrollPane scroll = new JScrollPane(list);
 		JButton removeButton = new JButton(string);
 		
 		list.setVisible(true);
 		
+		
 //		removeButton.addActionListener(l -> cb.removeContact(scroll.));
 		
 		scroll.createVerticalScrollBar();
-		scroll.add(list);
+//		scroll.add(list);
 		
 		panel.add(scroll);
 		panel.add(removeButton);

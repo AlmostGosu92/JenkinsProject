@@ -11,7 +11,7 @@ public class ContactBook implements ui.UI {
 	}	
 	
 	public void addContact(String name, String lastName, String email, String number) {
-	  contacts.add(new Contact(name, lastName, email ,number));
+		contacts.add(new Contact(name, lastName, email ,number));
 	}
 
 //	@Override
