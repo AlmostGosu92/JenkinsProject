@@ -60,23 +60,22 @@ public interface UI {
 		JScrollPane scroll = new JScrollPane(list);
 		JButton removeButton = new JButton(string);
 		
-		list.setVisible(true);
+		//kod ska implementeras för removeContact metod
+//		removeButton.addActionListener(l -> cb.removeContact(scroll)));
 		
-		
-//		removeButton.addActionListener(l -> cb.removeContact(scroll.));
+		list.setVisible(true);		
 		
 		scroll.createVerticalScrollBar();
-//		scroll.add(list);
 		
 		panel.add(scroll);
 		panel.add(removeButton);
 		panel.setLayout(new GridLayout(2,1));
+		
 		return panel;
 	}
 	
 	private Component makePanelAddContact(String buttonText, String labelFName, String labelLName, String labelNumber, String labelMail) {
 		JPanel panel = new JPanel();
-		panel.add(new JLabel(labelFName));
 		JTextField jtfFname = new JTextField(null, 5);
 		JTextField jtfLname = new JTextField(null, 5);
 		JTextField jtfMail = new JTextField(null, 5);
@@ -84,7 +83,9 @@ public interface UI {
 		
 		JButton addButton = new JButton(buttonText);
 		addButton.addActionListener(l ->  cb.addContact(jtfFname.getText(), jtfLname.getText(), jtfMail.getText(), jtfNumber.getText()));
+//		addButton.addActionListener(l -> ); //Behöver implementera kod för att updatera JScrollPane i Contactbook tabben
 
+		panel.add(new JLabel(labelFName));
 		panel.add(jtfFname);
 		panel.add(new JLabel(labelLName));
 		panel.add(jtfLname);
