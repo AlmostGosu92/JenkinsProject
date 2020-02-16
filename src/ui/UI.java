@@ -3,6 +3,10 @@ package ui;
 import java.awt.Component;
 import java.awt.FlowLayout;
 import java.awt.GridLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.io.IOException;
+
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -81,8 +85,35 @@ public interface UI {
 		JTextField jtfMail = new JTextField(null, 5);
 		JTextField jtfNumber = new JTextField(null, 5);
 		
+		JButton saveButton = new JButton("Save contacts");
 		JButton addButton = new JButton(buttonText);
 		addButton.addActionListener(l ->  cb.addContact(jtfFname.getText(), jtfLname.getText(), jtfMail.getText(), jtfNumber.getText()));
+		saveButton.addActionListener(l -> {
+			try {
+				f.save();
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		});
+//		addButton.addActionListener(new ActionListener() {
+//			public void actionPerformed(ActionEvent evt) {
+//				cb.addContact(jtfFname.getText(), jtfLname.getText(), jtfMail.getText(), jtfNumber.getText());
+//				new ActionListener() {
+//
+//					@Override
+//					public void actionPerformed(ActionEvent e) {
+//						try {
+//							f.save();
+//						} catch (IOException e1) {
+//							e1.printStackTrace();
+//						}
+//						
+//					}
+//					
+//				};
+//			}
+//		});
 //		addButton.addActionListener(l -> ); //Behöver implementera kod för att updatera JScrollPane i Contactbook tabben
 
 		panel.add(new JLabel(labelFName));
@@ -93,6 +124,7 @@ public interface UI {
 		panel.add(jtfMail);
 		panel.add(new JLabel(labelMail));
 		panel.add(jtfNumber);
+		panel.add(saveButton);
 		panel.add(addButton);
 		panel.setLayout(new GridLayout(5,2));
 		

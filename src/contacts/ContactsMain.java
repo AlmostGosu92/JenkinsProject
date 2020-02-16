@@ -9,6 +9,7 @@ public class ContactsMain {
 	public static void main(String[] args) throws IOException {
 //		Filesync f = new Filesync();
 		//Kontakter tillagda för testsyften
+
 //		ContactBookSearch s = new ContactBookSearch();
 		UI.cb.addContact("Dan", "Dansson", "mail@mail", "031-435345345");
 		UI.cb.addContact("Jon", "Jonsson", "mail@mail", "031-435345345");
@@ -25,6 +26,7 @@ public class ContactsMain {
 		UI.f.save();
 		UI.cb.addContact("Arne", "arnesson", "mail@mail", "031-28347242");
 		System.out.println(UI.cbs.searchContact("arne"));
+
 	//	ContactBook cb = new ContactBook();
 		
 //		f.save();

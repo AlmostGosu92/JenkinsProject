@@ -16,7 +16,7 @@ import contacts.ContactBook;
 
 public class Filesync {
 
-	ContactBook b = new ContactBook();
+	ContactBook b = ui.UI.cb;
 	
 	public void load() throws FileNotFoundException {
 		File file = new File("kontaktlista.txt");
