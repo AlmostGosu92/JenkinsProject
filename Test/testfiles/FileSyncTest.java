@@ -22,7 +22,7 @@ public class FileSyncTest {
 	void LoadTest() throws IOException {
 		ContactBook c = new ContactBook();
 
-		
+			c.contacts.clear();
 			f.setFilnamn("Test.txt");
 			BufferedWriter out = new BufferedWriter(new FileWriter(f.getFilnamn()));
 			out.write("Test Testsson Test@test.test 08-434343");
@@ -37,8 +37,9 @@ public class FileSyncTest {
 	@Test
 	void SaveTest() throws IOException {
 
-		
+			
 			ContactBook c = new ContactBook();
+			c.contacts.clear();
 			c.addContact("Peter", "Petersson", "peter@hotmail.com", "070-9367431");
 			c.addContact("Eric", "Ericsson", "eric@hotmail.com", "08-4343435");
 			f.setFilnamn("saveTest.txt");
