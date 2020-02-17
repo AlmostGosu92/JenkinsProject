@@ -16,13 +16,13 @@ class ContactBookSearchTest {
 	}	@Test
 	void SearchForExistingContactTest() {
 		GUI.cb.addContact("Arne", "Bjarnesson", "mail@mail", "031-28347242");
-		GUI.cb.runGUI();
+//		GUI.cb.runGUI();
 		assertEquals(GUI.cbs.searchContact("arne"), "Arne Bjarnesson, mail@mail, 031-28347242");
 	}	@Test
 	void SearchForExistingContactTest2() {
 		GUI.cb.addContact("Arne", "Bjarnesson", "mail@mail", "031-28347242");
 		GUI.cb.addContact("Jonas", "Bengtsson", "mail@mail", "031-28347242");
-		GUI.cb.runGUI();
+//		GUI.cb.runGUI();
 		assertEquals(GUI.cbs.searchContact("jonas"), "Jonas Bengtsson, mail@mail, 031-28347242");
 	}
 
