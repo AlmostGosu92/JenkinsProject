@@ -4,7 +4,6 @@ import java.awt.Component;
 import java.awt.GridLayout;
 
 import javax.swing.JFrame;
-import javax.swing.JPanel;
 import javax.swing.JTabbedPane;
 
 import contacts.ContactBook;
