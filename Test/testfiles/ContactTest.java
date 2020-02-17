@@ -1,7 +1,9 @@
 package testfiles;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotEquals;
+
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotEquals;
 
 import org.junit.jupiter.api.Test;
 
@@ -14,6 +16,7 @@ class ContactTest {
 	void TestContactsNameCorrect() {
 		Contact kontakt1 = new Contact("Lars", "Roffel", "larsr@gmail.com", "101010");
 		assertEquals(kontakt1.getName(), "Lars");
+		
 }
 	@Test
 	void TestContactsNameNotCorrect() {

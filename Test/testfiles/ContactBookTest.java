@@ -1,6 +1,7 @@
 package testfiles;
 
-import static org.junit.Assert.assertEquals;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import org.junit.jupiter.api.Test;
 
@@ -14,6 +15,7 @@ class ContactBookTest {
 		ContactBook cb = new ContactBook();
 		cb.addContact("Lars", "roFFel", "hej@gmail.com", "2123123");
 		assertEquals(cb.contacts.size(), 1);
+		cb.contacts.clear();
 	}
 	
 	
@@ -23,6 +25,7 @@ class ContactBookTest {
 		cb.addContact("Lars", "roFFel", "hej@gmail.com", "2123123");
 		cb.addContact("Lars", "ruFFel", "haj@gmail.com", "23213123");
 		assertEquals(cb.contacts.size(), 2);
+		cb.contacts.clear();
 	}
 	
 	@Test
@@ -32,6 +35,7 @@ class ContactBookTest {
 		cb.addContact("Lars", "ruFFel", "haj@gmail.com", "23213123");
 		cb.removeContact(1);
 		assertEquals(cb.contacts.size(), 1);
+		cb.contacts.clear();
 	}
 	
 	@Test
@@ -42,6 +46,7 @@ class ContactBookTest {
 		cb.removeContact(1);
 		cb.removeContact(0);
 		assertEquals(cb.contacts.size(), 0);
+		cb.contacts.clear();
 	}
 
 }
