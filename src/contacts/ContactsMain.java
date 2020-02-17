@@ -2,13 +2,16 @@ package contacts;
 
 import java.io.IOException;
 
-import ui.UI;
+import ui.GUI;
 
 public class ContactsMain {
 
 	public static void main(String[] args) throws IOException {
 //		Filesync f = new Filesync();
 		//Kontakter tillagda för testsyften
+		GUI.f.Load();
+		GUI.cb.runGUI();
+		GUI.f.save();
 
 //		ContactBookSearch s = new ContactBookSearch();
 //		UI.cb.addContact("Dan", "Dansson", "mail@mail", "031-435345345");
@@ -22,9 +25,9 @@ public class ContactsMain {
 //		UI.cb.addContact("Josef", "Josefsson", "mail@mail", "031-435345345");
 //		UI.cb.addContact("Michael", "Michaelsson", "mail@mail", "031-435345345");
 //		UI.cb.addContact("Gustav", "Gustavsson", "mail@mail", "031-435345345");
-		UI.f.Load();
-		UI.cb.run();
-		UI.f.save();
+//		UI.f.Load();
+//		UI.cb.run();
+//		UI.f.save();
 //		UI.cb.addContact("Arne", "arnesson", "mail@mail", "031-28347242");
 //		System.out.println(UI.cbs.searchContact("arne"));
 

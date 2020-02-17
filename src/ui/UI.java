@@ -62,8 +62,6 @@ public interface UI {
 		JScrollPane scroll = new JScrollPane(list);
 		JButton removeButton = new JButton(string);
 		
-//		kod ska implementeras för removeContact metod
-//		removeButton.addActionListener(l -> cb.removeContact(list.getSelectedIndex()));
 		removeButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent evt) {
 				cb.removeContact(list.getSelectedIndex());
