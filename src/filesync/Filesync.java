@@ -16,7 +16,7 @@ import contacts.ContactBook;
 
 public class Filesync {
 
-	ContactBook b = ui.UI.cb;
+	ContactBook b = ui.GUI.cb;
 	
 	private String filnamn = "kontaktlista.txt";
 

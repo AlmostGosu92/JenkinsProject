@@ -1,13 +1,13 @@
 package contacts;
 
-import ui.UI;
+import ui.GUI;
 
 public class ContactBookSearch  {
 	
 
 	public String searchContact(String string) {
 		
-		for (Contact contact : UI.cb.contacts) {
+		for (Contact contact : GUI.cb.contacts) {
 		if (contact.getName().toLowerCase().contains(string)){
 			return contact.getName() + " " + contact.getLastName() + ", " + contact.getMail() + ", " + contact.getNumber();
 		}
