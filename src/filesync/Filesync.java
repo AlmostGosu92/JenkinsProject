@@ -18,6 +18,8 @@ public class Filesync {
 
 	ContactBook b = ui.GUI.cb;
 	
+//	Variabel för filnamnet. Den är kontaktlista.txt default. Getters och setters används främst för att byta fil i 
+//	tester så att inte kotaklista skrivs över av save-metoden i testerna.
 	private String filnamn = "kontaktlista.txt";
 
 	public String getFilnamn() {
@@ -28,6 +30,8 @@ public class Filesync {
 		this.filnamn = filnamn;
 	}
 	
+	
+//	Load läser in alla rader ifrån txtfilen och skapar en ny kontakt för varje rad.
 	public void Load() throws FileNotFoundException {
 		
 		File file = new File(filnamn);
@@ -48,6 +52,8 @@ public class Filesync {
 		
 
 	}
+	
+//	Save-metoden skapar en fil som heter kontaklista.txt och skriver ut alla element i bjekten i listan.
 	public void save() throws IOException {
 		
 		BufferedWriter out = new BufferedWriter(new FileWriter(filnamn));
