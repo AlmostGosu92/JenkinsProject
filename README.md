@@ -4,7 +4,6 @@ Repo for project
 
 
 Technologies
-
 Java 11
 Apache Maven 3.6.0
 Git version 2.17.1
