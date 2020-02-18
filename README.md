@@ -1,9 +1,8 @@
 # JenkinsProject
-Repo for project 
+Hur fungerar programmet?
+I programmet finns tre flikar som är ContactList, add contact samt search contact. På Contactlist-fliken ser man alla kontakter som är tillagda i listan. Man kan även markera en av dem och trycka remove för att ta bort kontakten. På add contact kan man fylla i uppgifter för en ny kontakt och sedan trycka på add kontakt för att lägga till. På search kontakt så kan man skriva in namnet, mailen eller telefonnummer på en kontakt och sedan trycka på search kontakt för att söka efter kontakten.
 
-
-
-Technologies
+Technologies:
 Java 11
 Apache Maven 3.6.0
 Git version 2.17.1
