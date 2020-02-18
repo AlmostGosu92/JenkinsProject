@@ -2,6 +2,9 @@ package contacts;
 
 public class Contact {
 	
+//Nedan är en konstruktor med tillhörande getters & setters,
+//med Strings på name, lastname, mail och number.	
+	
 	String name, lastName, mail, number;
 	
 	public Contact(String name, String lastName, String mail, String number) {
