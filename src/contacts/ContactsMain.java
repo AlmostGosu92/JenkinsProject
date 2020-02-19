@@ -7,7 +7,7 @@ import ui.GUI;
 public class ContactsMain {
 
 	public static void main(String[] args) throws IOException {
-
+		GUI.f.FileCheck();
 		GUI.f.Load();
 		GUI.cb.runGUI();
 		GUI.f.save();

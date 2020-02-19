@@ -30,7 +30,15 @@ public class Filesync {
 		this.filnamn = filnamn;
 	}
 	
-	
+	public void FileCheck() throws IOException {
+		File existera = new File("kontaktlista.txt");
+		boolean exists = existera.exists();
+		
+		if (exists == false) {
+			BufferedWriter out = new BufferedWriter(new FileWriter("kontaktlista.txt"));
+		}
+		
+	}
 //	Load läser in alla rader ifrån txtfilen och skapar en ny kontakt för varje rad.
 	public void Load() throws FileNotFoundException {
 		
